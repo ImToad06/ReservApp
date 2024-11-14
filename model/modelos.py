@@ -5,9 +5,12 @@ class Usuario:
     def __init__(self) -> None:
         self.nombres = ""
         self.apellidos = ""
+        self.cedula = ""
+        self.fnaci = ""
         self.email = ""
         self.direccion = ""
         self.telefono = ""
+        self.clave = ""
 
 
 class Mesa:
