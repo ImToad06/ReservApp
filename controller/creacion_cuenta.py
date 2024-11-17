@@ -13,6 +13,14 @@ class CrearCliente(QMainWindow):
         super(CrearCliente, self).__init__()
         loadUi("/home/juan/dev/reservapp/view/registro_cliente.ui", self)
         self.bt_crear_cuenta.clicked.connect(self.crear_cuenta)
+        self.bt_atras.clicked.connect(self.cambiar_atras)
+
+    def cambiar_atras(self):
+        from controller.login_usuario import LoginCliente
+
+        self.login_cliente = LoginCliente()
+        self.close()
+        self.login_cliente.show()
 
     def crear_cuenta(self):
         usuario = self.obtener_datos()
@@ -26,18 +34,19 @@ class CrearCliente(QMainWindow):
             db.cursor.execute(
                 consultas[3], (usuario.telefono, date.today().strftime("%Y-%m-%d"))
             )
-            db.cursor.execute(
-                consultas[0], (usuario.direccion, date.today().strftime("%Y-%m-%d"))
-            )
+            if self.obtener_direccion(usuario.direccion) is None:
+                db.cursor.execute(
+                    consultas[0], (usuario.direccion, date.today().strftime("%Y-%m-%d"))
+                )
             db.cursor.execute(
                 consultas[2], (usuario.email, date.today().strftime("%Y-%m-%d"))
             )
             db.conexion.commit()
-            db.cursor.execute(consultas[5], (usuario.email,))
+            db.cursor.execute(consultas[6], (usuario.email,))
             ema_id = db.cursor.fetchone()
             db.cursor.execute(consultas[4], (usuario.telefono,))
             tel_id = db.cursor.fetchone()
-            db.cursor.execute(consultas[6], (usuario.direccion,))
+            db.cursor.execute(consultas[5], (usuario.direccion,))
             dir_id = db.cursor.fetchone()
             db.cursor.execute(
                 consultas[1],
@@ -64,6 +73,13 @@ class CrearCliente(QMainWindow):
         else:
             self.l_error.setText("Error! datos incompletos.")
 
+    def obtener_direccion(self, direccion):
+        db = Conexion()
+        consultas = self.obtener_consultas()
+        db.cursor.execute(consultas[5], (direccion,))
+        dir_direccion = db.cursor.fetchone()
+        return dir_direccion
+
     def obtener_datos(self) -> Usuario:
         usuario = Usuario()
         usuario.nombres = self.le_nombre.text().lower()
@@ -89,6 +105,13 @@ class CrearCliente(QMainWindow):
         else:
             return False
 
+    # 0. insertar direccion
+    # 1. insertar cliente
+    # 2. insertar email
+    # 3. insertar telefono
+    # 4. buscar telefono
+    # 5. buscar direccion
+    # 6. buscar email
     def obtener_consultas(self):
         with open("/home/juan/dev/reservapp/queries/crear_direccion.sql", "r") as query:
             crear_direccion = query.read()

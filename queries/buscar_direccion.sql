@@ -1,3 +1,3 @@
-SELECT e.ema_id
-FROM emails e
-WHERE e.ema_email = %s;
+SELECT d.dir_id
+FROM direcciones d
+WHERE d.dir_direccion = %s;

@@ -91,7 +91,7 @@ QLineEdit:focus{
      <string/>
     </property>
     <property name="echoMode">
-     <enum>QLineEdit::PasswordEchoOnEdit</enum>
+     <enum>QLineEdit::Normal</enum>
     </property>
     <property name="placeholderText">
      <string> ID EMPLEADO</string>
@@ -130,6 +130,41 @@ QLineEdit:focus{
     </property>
     <property name="text">
      <string/>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="bt_atras">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>61</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>11</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+	border-radius: 8px;
+	background-color: rgb(185, 212, 248);
+	color: rgb(255, 255, 255);
+}
+
+QPushButton:hover{
+	
+	background-color: rgb(101, 155, 219);
+}</string>
+    </property>
+    <property name="text">
+     <string>ATRÁS</string>
     </property>
    </widget>
   </widget>

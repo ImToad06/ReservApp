@@ -11,6 +11,7 @@ class LoginCliente(QMainWindow):
         loadUi("/home/juan/dev/reservapp/view/login_cliente.ui", self)
         self.bt_crear_cuenta.clicked.connect(self.cambiar_registro)
         self.bt_login.clicked.connect(self.login)
+        self.bt_atras.clicked.connect(self.cambiar_atras)
 
     def cambiar_registro(self):
         from controller.creacion_cuenta import CrearCliente
@@ -18,6 +19,13 @@ class LoginCliente(QMainWindow):
         self.registro = CrearCliente()
         self.close()
         self.registro.show()
+
+    def cambiar_atras(self):
+        from controller.bienvenida import Bienvenida
+
+        self.bienvenida = Bienvenida()
+        self.close()
+        self.bienvenida.show()
 
     def login(self):
         db = Conexion()
@@ -43,6 +51,7 @@ class LoginEmpleado(QMainWindow):
         super(LoginEmpleado, self).__init__()
         loadUi("/home/juan/dev/reservapp/view/login_empleado.ui", self)
         self.bt_login.clicked.connect(self.login)
+        self.bt_atras.clicked.connect(self.cambiar_atras)
 
     def login(self):
         usu_cedula = self.le_dni.text()
@@ -60,3 +69,10 @@ class LoginEmpleado(QMainWindow):
             self.close()
             self.main.show()
         db.conexion.close()
+
+    def cambiar_atras(self):
+        from controller.bienvenida import Bienvenida
+
+        self.bienvenida = Bienvenida()
+        self.close()
+        self.bienvenida.show()
