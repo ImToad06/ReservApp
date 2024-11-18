@@ -32,15 +32,16 @@ class LoginCliente(QMainWindow):
         email = self.le_email.text()
         clave = self.le_clave.text()
         db.cursor.execute(
-            f"select e.ema_email, u.usu_clave from usuarios u inner join emails e on u.ema_id = e.ema_id where e.ema_email = '{email}'"
+            f"select u.usu_id, e.ema_email, u.usu_clave from usuarios u inner join emails e on u.ema_id = e.ema_id where e.ema_email = '{email}'"
         )
         cuenta = db.cursor.fetchone()
         if cuenta is None:
             self.l_error.setText("Error! La cuenta no existe.")
-        elif cuenta[1] != clave:
+        elif cuenta[2] != clave:
             self.l_error.setText("Error! Contraseña incorrecta.")
-        elif cuenta[1] == clave:
-            self.main_cliente = MainCliente()
+        elif cuenta[2] == clave:
+            self.main_cliente = MainCliente(usu_id=cuenta[0])
+            print(cuenta[0])
             self.close()
             self.main_cliente.show()
         db.conexion.close()

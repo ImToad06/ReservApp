@@ -142,32 +142,45 @@ QPushButton:hover{
       <widget class="QLabel" name="label_2">
        <property name="geometry">
         <rect>
-         <x>90</x>
+         <x>20</x>
          <y>350</y>
-         <width>561</width>
+         <width>631</width>
          <height>20</height>
         </rect>
        </property>
        <property name="text">
-        <string>Created by: Ricardo puerta, Juan Reyes, Randy Zapata, Juan Jimenez, Juan barros, yoid gamarra</string>
+        <string>Created by: Ricardo puerta, Juan Reyes, Randy Zapata, Juan Jimenez, Juan barros,</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
        </property>
       </widget>
       <widget class="QLabel" name="label_3">
        <property name="geometry">
         <rect>
-         <x>80</x>
+         <x>19</x>
          <y>140</y>
-         <width>510</width>
+         <width>621</width>
          <height>21</height>
         </rect>
        </property>
        <property name="font">
         <font>
-         <pointsize>10</pointsize>
+         <family>Noto Sans</family>
+         <pointsize>12</pointsize>
+         <weight>50</weight>
+         <italic>false</italic>
+         <bold>false</bold>
         </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font: 12pt &quot;Noto Sans&quot;;</string>
        </property>
        <property name="text">
         <string>Sistema de administración de reservas y pedidos para tu restaurante</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
        </property>
       </widget>
      </widget>

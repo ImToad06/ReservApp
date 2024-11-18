@@ -103,7 +103,7 @@ QPushButton:hover{
 }</string>
        </property>
        <property name="text">
-        <string>Reservar</string>
+        <string>Mesas</string>
        </property>
        <property name="autoDefault">
         <bool>false</bool>
@@ -136,7 +136,7 @@ QPushButton:hover{
 }</string>
        </property>
        <property name="text">
-        <string>Mis Reservas</string>
+        <string>Items</string>
        </property>
        <property name="autoDefault">
         <bool>false</bool>
@@ -146,7 +146,7 @@ QPushButton:hover{
        <property name="geometry">
         <rect>
          <x>10</x>
-         <y>590</y>
+         <y>480</y>
          <width>231</width>
          <height>91</height>
         </rect>
@@ -169,11 +169,7 @@ QPushButton:hover{
 }</string>
        </property>
        <property name="text">
-        <string>Mi cuenta</string>
-       </property>
-       <property name="icon">
-        <iconset>
-         <normaloff>../resources/acount_icon.png</normaloff>../resources/acount_icon.png</iconset>
+        <string>Cuentas</string>
        </property>
        <property name="iconSize">
         <size>
@@ -220,7 +216,7 @@ QPushButton:hover{
           <widget class="QLabel" name="label">
            <property name="geometry">
             <rect>
-             <x>20</x>
+             <x>70</x>
              <y>20</y>
              <width>731</width>
              <height>81</height>
@@ -236,306 +232,17 @@ QPushButton:hover{
             <string notr="true">color: rgb(185, 212, 248)</string>
            </property>
            <property name="text">
-            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:36pt;&quot;&gt;Seleccione la fecha de su reserva&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:24pt;&quot;&gt;Crear Mesa&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
            </property>
            <property name="alignment">
             <set>Qt::AlignCenter</set>
-           </property>
-          </widget>
-          <widget class="QDateEdit" name="de_freserva">
-           <property name="geometry">
-            <rect>
-             <x>130</x>
-             <y>130</y>
-             <width>191</width>
-             <height>31</height>
-            </rect>
-           </property>
-           <property name="palette">
-            <palette>
-             <active>
-              <colorrole role="WindowText">
-               <brush brushstyle="SolidPattern">
-                <color alpha="255">
-                 <red>255</red>
-                 <green>255</green>
-                 <blue>255</blue>
-                </color>
-               </brush>
-              </colorrole>
-              <colorrole role="Button">
-               <brush brushstyle="SolidPattern">
-                <color alpha="255">
-                 <red>56</red>
-                 <green>58</green>
-                 <blue>89</blue>
-                </color>
-               </brush>
-              </colorrole>
-              <colorrole role="Base">
-               <brush brushstyle="SolidPattern">
-                <color alpha="255">
-                 <red>56</red>
-                 <green>58</green>
-                 <blue>89</blue>
-                </color>
-               </brush>
-              </colorrole>
-              <colorrole role="Window">
-               <brush brushstyle="SolidPattern">
-                <color alpha="255">
-                 <red>56</red>
-                 <green>58</green>
-                 <blue>89</blue>
-                </color>
-               </brush>
-              </colorrole>
-             </active>
-             <inactive>
-              <colorrole role="WindowText">
-               <brush brushstyle="SolidPattern">
-                <color alpha="255">
-                 <red>255</red>
-                 <green>255</green>
-                 <blue>255</blue>
-                </color>
-               </brush>
-              </colorrole>
-              <colorrole role="Button">
-               <brush brushstyle="SolidPattern">
-                <color alpha="255">
-                 <red>56</red>
-                 <green>58</green>
-                 <blue>89</blue>
-                </color>
-               </brush>
-              </colorrole>
-              <colorrole role="Base">
-               <brush brushstyle="SolidPattern">
-                <color alpha="255">
-                 <red>56</red>
-                 <green>58</green>
-                 <blue>89</blue>
-                </color>
-               </brush>
-              </colorrole>
-              <colorrole role="Window">
-               <brush brushstyle="SolidPattern">
-                <color alpha="255">
-                 <red>56</red>
-                 <green>58</green>
-                 <blue>89</blue>
-                </color>
-               </brush>
-              </colorrole>
-             </inactive>
-             <disabled>
-              <colorrole role="WindowText">
-               <brush brushstyle="SolidPattern">
-                <color alpha="255">
-                 <red>120</red>
-                 <green>120</green>
-                 <blue>120</blue>
-                </color>
-               </brush>
-              </colorrole>
-              <colorrole role="Button">
-               <brush brushstyle="SolidPattern">
-                <color alpha="255">
-                 <red>56</red>
-                 <green>58</green>
-                 <blue>89</blue>
-                </color>
-               </brush>
-              </colorrole>
-              <colorrole role="Base">
-               <brush brushstyle="SolidPattern">
-                <color alpha="255">
-                 <red>56</red>
-                 <green>58</green>
-                 <blue>89</blue>
-                </color>
-               </brush>
-              </colorrole>
-              <colorrole role="Window">
-               <brush brushstyle="SolidPattern">
-                <color alpha="255">
-                 <red>56</red>
-                 <green>58</green>
-                 <blue>89</blue>
-                </color>
-               </brush>
-              </colorrole>
-             </disabled>
-            </palette>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">QLineEdit{
-	border: 2px solidrgb(38, 38, 48);
-	border -radius: 15px;
-	color: #FFF;
-	
-	background-color: rgb(36, 36, 36);
-}
-
-QLineEdit:hover{
-	border : 2px solid rgb(48,50,62);
- 
-}
-
-QLineEdit:focus{
-	border: 2px solid (35,218,233);
-	background-color: rgb(47,47,47)
-}
-</string>
-           </property>
-           <property name="wrapping">
-            <bool>false</bool>
-           </property>
-           <property name="alignment">
-            <set>Qt::AlignCenter</set>
-           </property>
-           <property name="readOnly">
-            <bool>false</bool>
-           </property>
-           <property name="buttonSymbols">
-            <enum>QAbstractSpinBox::UpDownArrows</enum>
-           </property>
-           <property name="specialValueText">
-            <string/>
-           </property>
-           <property name="accelerated">
-            <bool>false</bool>
-           </property>
-           <property name="calendarPopup">
-            <bool>true</bool>
-           </property>
-          </widget>
-          <widget class="QLabel" name="label_3">
-           <property name="geometry">
-            <rect>
-             <x>30</x>
-             <y>130</y>
-             <width>81</width>
-             <height>21</height>
-            </rect>
-           </property>
-           <property name="font">
-            <font>
-             <family>Noto Sans</family>
-             <pointsize>16</pointsize>
-             <weight>50</weight>
-             <italic>false</italic>
-             <bold>false</bold>
-            </font>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">font: 16pt &quot;Noto Sans&quot;;
-color: rgb(255, 255, 255);</string>
-           </property>
-           <property name="text">
-            <string>Fecha</string>
-           </property>
-          </widget>
-          <widget class="QTimeEdit" name="te_hreserva">
-           <property name="geometry">
-            <rect>
-             <x>130</x>
-             <y>180</y>
-             <width>191</width>
-             <height>31</height>
-            </rect>
-           </property>
-          </widget>
-          <widget class="QLabel" name="label_4">
-           <property name="geometry">
-            <rect>
-             <x>30</x>
-             <y>180</y>
-             <width>81</width>
-             <height>21</height>
-            </rect>
-           </property>
-           <property name="font">
-            <font>
-             <family>Noto Sans</family>
-             <pointsize>16</pointsize>
-             <weight>50</weight>
-             <italic>false</italic>
-             <bold>false</bold>
-            </font>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">font: 16pt &quot;Noto Sans&quot;;
-color: rgb(255, 255, 255);</string>
-           </property>
-           <property name="text">
-            <string>Hora</string>
-           </property>
-          </widget>
-          <widget class="QPushButton" name="bt_buscar">
-           <property name="geometry">
-            <rect>
-             <x>330</x>
-             <y>130</y>
-             <width>141</width>
-             <height>81</height>
-            </rect>
-           </property>
-           <property name="font">
-            <font>
-             <pointsize>20</pointsize>
-            </font>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">QPushButton {
-	border-radius: 8px;
-	background-color: rgb(185, 212, 248);
-	color: rgb(255, 255, 255);
-}
-
-QPushButton:hover{
-	
-	background-color: rgb(101, 155, 219);
-}</string>
-           </property>
-           <property name="text">
-            <string>Buscar</string>
-           </property>
-           <property name="autoDefault">
-            <bool>false</bool>
-           </property>
-          </widget>
-          <widget class="QLabel" name="label_2">
-           <property name="geometry">
-            <rect>
-             <x>30</x>
-             <y>250</y>
-             <width>361</width>
-             <height>41</height>
-            </rect>
-           </property>
-           <property name="font">
-            <font>
-             <family>Segoe UI</family>
-             <pointsize>40</pointsize>
-            </font>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">color: rgb(185, 212, 248)</string>
-           </property>
-           <property name="text">
-            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:20pt;&quot;&gt;Mesas disponibles&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-           </property>
-           <property name="alignment">
-            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
            </property>
           </widget>
           <widget class="QLabel" name="label_5">
            <property name="geometry">
             <rect>
-             <x>490</x>
-             <y>130</y>
+             <x>200</x>
+             <y>120</y>
              <width>111</width>
              <height>21</height>
             </rect>
@@ -560,8 +267,8 @@ color: rgb(255, 255, 255);</string>
           <widget class="QLabel" name="label_6">
            <property name="geometry">
             <rect>
-             <x>490</x>
-             <y>180</y>
+             <x>200</x>
+             <y>170</y>
              <width>111</width>
              <height>21</height>
             </rect>
@@ -580,14 +287,14 @@ color: rgb(255, 255, 255);</string>
 color: rgb(255, 255, 255);</string>
            </property>
            <property name="text">
-            <string>Personas</string>
+            <string>Capacidad</string>
            </property>
           </widget>
           <widget class="QLineEdit" name="le_nro_mesa">
            <property name="geometry">
             <rect>
-             <x>610</x>
-             <y>130</y>
+             <x>350</x>
+             <y>120</y>
              <width>201</width>
              <height>31</height>
             </rect>
@@ -624,8 +331,8 @@ QLineEdit:focus{
           <widget class="QLineEdit" name="le_nro_personas">
            <property name="geometry">
             <rect>
-             <x>610</x>
-             <y>180</y>
+             <x>350</x>
+             <y>170</y>
              <width>201</width>
              <height>31</height>
             </rect>
@@ -656,14 +363,14 @@ QLineEdit:focus{
             <string/>
            </property>
            <property name="placeholderText">
-            <string>Nro personas para la reserva</string>
+            <string>Capacidad de la mesa</string>
            </property>
           </widget>
           <widget class="QPushButton" name="bt_confirmar">
            <property name="geometry">
             <rect>
-             <x>830</x>
-             <y>130</y>
+             <x>570</x>
+             <y>120</y>
              <width>161</width>
              <height>81</height>
             </rect>
@@ -686,7 +393,7 @@ QPushButton:hover{
 }</string>
            </property>
            <property name="text">
-            <string>Confirmar</string>
+            <string>Crear</string>
            </property>
            <property name="autoDefault">
             <bool>false</bool>
@@ -721,83 +428,435 @@ color: rgb(255, 0, 0);</string>
             <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
            </property>
           </widget>
-          <widget class="QTableWidget" name="tw_mesas">
+          <widget class="QLabel" name="label_2">
            <property name="geometry">
             <rect>
-             <x>30</x>
-             <y>310</y>
-             <width>461</width>
-             <height>391</height>
+             <x>100</x>
+             <y>220</y>
+             <width>731</width>
+             <height>81</height>
             </rect>
            </property>
-           <property name="sortingEnabled">
+           <property name="font">
+            <font>
+             <family>Segoe UI</family>
+             <pointsize>40</pointsize>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">color: rgb(185, 212, 248)</string>
+           </property>
+           <property name="text">
+            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:24pt;&quot;&gt;Buscar Mesa&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+          <widget class="QLabel" name="label_9">
+           <property name="geometry">
+            <rect>
+             <x>110</x>
+             <y>370</y>
+             <width>731</width>
+             <height>81</height>
+            </rect>
+           </property>
+           <property name="font">
+            <font>
+             <family>Segoe UI</family>
+             <pointsize>40</pointsize>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">color: rgb(185, 212, 248)</string>
+           </property>
+           <property name="text">
+            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:24pt;&quot;&gt;Actualizar mesa&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+          <widget class="QLabel" name="label_19">
+           <property name="geometry">
+            <rect>
+             <x>90</x>
+             <y>560</y>
+             <width>731</width>
+             <height>81</height>
+            </rect>
+           </property>
+           <property name="font">
+            <font>
+             <family>Segoe UI</family>
+             <pointsize>40</pointsize>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">color: rgb(185, 212, 248)</string>
+           </property>
+           <property name="text">
+            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:24pt;&quot;&gt;Eliminar mesa&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+          <widget class="QLabel" name="label_26">
+           <property name="geometry">
+            <rect>
+             <x>210</x>
+             <y>320</y>
+             <width>111</width>
+             <height>21</height>
+            </rect>
+           </property>
+           <property name="font">
+            <font>
+             <family>Noto Sans</family>
+             <pointsize>16</pointsize>
+             <weight>50</weight>
+             <italic>false</italic>
+             <bold>false</bold>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">font: 16pt &quot;Noto Sans&quot;;
+color: rgb(255, 255, 255);</string>
+           </property>
+           <property name="text">
+            <string>Mesa</string>
+           </property>
+          </widget>
+          <widget class="QLineEdit" name="le_nro_mesa_4">
+           <property name="geometry">
+            <rect>
+             <x>350</x>
+             <y>320</y>
+             <width>201</width>
+             <height>31</height>
+            </rect>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QLineEdit{
+	border: 2px solid rgb(38, 38, 48);
+	border -radius: 15px;
+	color: #FFF;
+	
+	background-color: rgb(36, 36, 36);
+
+}
+
+QLineEdit:hover{
+	border : 2px solid rgb(48,50,62);
+ 
+}
+
+QLineEdit:focus{
+	border: 2px solid (35,218,233);
+	background-color: rgb(47,47,47)
+}
+
+</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="placeholderText">
+            <string>  Nro Mesa</string>
+           </property>
+          </widget>
+          <widget class="QPushButton" name="bt_confirmar_4">
+           <property name="geometry">
+            <rect>
+             <x>570</x>
+             <y>320</y>
+             <width>161</width>
+             <height>51</height>
+            </rect>
+           </property>
+           <property name="font">
+            <font>
+             <pointsize>20</pointsize>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QPushButton {
+	border-radius: 8px;
+	background-color: rgb(185, 212, 248);
+	color: rgb(255, 255, 255);
+}
+
+QPushButton:hover{
+	
+	background-color: rgb(101, 155, 219);
+}</string>
+           </property>
+           <property name="text">
+            <string>Buscar</string>
+           </property>
+           <property name="autoDefault">
             <bool>false</bool>
            </property>
-           <property name="columnCount">
-            <number>2</number>
+          </widget>
+          <widget class="QLineEdit" name="le_nro_personas_4">
+           <property name="geometry">
+            <rect>
+             <x>350</x>
+             <y>520</y>
+             <width>201</width>
+             <height>31</height>
+            </rect>
            </property>
-           <attribute name="horizontalHeaderMinimumSectionSize">
-            <number>40</number>
-           </attribute>
-           <attribute name="horizontalHeaderDefaultSectionSize">
-            <number>229</number>
-           </attribute>
-           <attribute name="horizontalHeaderHighlightSections">
-            <bool>true</bool>
-           </attribute>
-           <column>
-            <property name="text">
-             <string>Nro mesa</string>
-            </property>
-            <property name="font">
-             <font>
-              <family>Noto Sans</family>
-              <pointsize>14</pointsize>
-             </font>
-            </property>
-            <property name="background">
-             <color>
-              <red>157</red>
-              <green>186</green>
-              <blue>225</blue>
-             </color>
-            </property>
-            <property name="foreground">
-             <brush brushstyle="SolidPattern">
-              <color alpha="255">
-               <red>255</red>
-               <green>255</green>
-               <blue>255</blue>
-              </color>
-             </brush>
-            </property>
-           </column>
-           <column>
-            <property name="text">
-             <string>Capacidad</string>
-            </property>
-            <property name="font">
-             <font>
-              <pointsize>14</pointsize>
-             </font>
-            </property>
-            <property name="background">
-             <color>
-              <red>157</red>
-              <green>186</green>
-              <blue>225</blue>
-             </color>
-            </property>
-            <property name="foreground">
-             <brush brushstyle="SolidPattern">
-              <color alpha="255">
-               <red>255</red>
-               <green>255</green>
-               <blue>255</blue>
-              </color>
-             </brush>
-            </property>
-           </column>
+           <property name="styleSheet">
+            <string notr="true">QLineEdit{
+	border: 2px solid rgb(38, 38, 48);
+	border -radius: 15px;
+	color: #FFF;
+	
+	background-color: rgb(36, 36, 36);
+
+}
+
+QLineEdit:hover{
+	border : 2px solid rgb(48,50,62);
+ 
+}
+
+QLineEdit:focus{
+	border: 2px solid (35,218,233);
+	background-color: rgb(47,47,47)
+}
+
+</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="placeholderText">
+            <string>Nueva capacidad de la mesa</string>
+           </property>
+          </widget>
+          <widget class="QLabel" name="label_27">
+           <property name="geometry">
+            <rect>
+             <x>200</x>
+             <y>520</y>
+             <width>111</width>
+             <height>21</height>
+            </rect>
+           </property>
+           <property name="font">
+            <font>
+             <family>Noto Sans</family>
+             <pointsize>16</pointsize>
+             <weight>50</weight>
+             <italic>false</italic>
+             <bold>false</bold>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">font: 16pt &quot;Noto Sans&quot;;
+color: rgb(255, 255, 255);</string>
+           </property>
+           <property name="text">
+            <string>Capacidad</string>
+           </property>
+          </widget>
+          <widget class="QLabel" name="label_28">
+           <property name="geometry">
+            <rect>
+             <x>200</x>
+             <y>470</y>
+             <width>111</width>
+             <height>21</height>
+            </rect>
+           </property>
+           <property name="font">
+            <font>
+             <family>Noto Sans</family>
+             <pointsize>16</pointsize>
+             <weight>50</weight>
+             <italic>false</italic>
+             <bold>false</bold>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">font: 16pt &quot;Noto Sans&quot;;
+color: rgb(255, 255, 255);</string>
+           </property>
+           <property name="text">
+            <string>Mesa</string>
+           </property>
+          </widget>
+          <widget class="QLineEdit" name="le_nro_mesa_5">
+           <property name="geometry">
+            <rect>
+             <x>350</x>
+             <y>470</y>
+             <width>201</width>
+             <height>31</height>
+            </rect>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QLineEdit{
+	border: 2px solid rgb(38, 38, 48);
+	border -radius: 15px;
+	color: #FFF;
+	
+	background-color: rgb(36, 36, 36);
+
+}
+
+QLineEdit:hover{
+	border : 2px solid rgb(48,50,62);
+ 
+}
+
+QLineEdit:focus{
+	border: 2px solid (35,218,233);
+	background-color: rgb(47,47,47)
+}
+
+</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="placeholderText">
+            <string>  Nro Mesa</string>
+           </property>
+          </widget>
+          <widget class="QPushButton" name="bt_confirmar_5">
+           <property name="geometry">
+            <rect>
+             <x>570</x>
+             <y>470</y>
+             <width>161</width>
+             <height>81</height>
+            </rect>
+           </property>
+           <property name="font">
+            <font>
+             <pointsize>20</pointsize>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QPushButton {
+	border-radius: 8px;
+	background-color: rgb(185, 212, 248);
+	color: rgb(255, 255, 255);
+}
+
+QPushButton:hover{
+	
+	background-color: rgb(101, 155, 219);
+}</string>
+           </property>
+           <property name="text">
+            <string>Actualizar</string>
+           </property>
+           <property name="autoDefault">
+            <bool>false</bool>
+           </property>
+          </widget>
+          <widget class="QLineEdit" name="le_nro_mesa_6">
+           <property name="geometry">
+            <rect>
+             <x>350</x>
+             <y>660</y>
+             <width>201</width>
+             <height>31</height>
+            </rect>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QLineEdit{
+	border: 2px solid rgb(38, 38, 48);
+	border -radius: 15px;
+	color: #FFF;
+	
+	background-color: rgb(36, 36, 36);
+
+}
+
+QLineEdit:hover{
+	border : 2px solid rgb(48,50,62);
+ 
+}
+
+QLineEdit:focus{
+	border: 2px solid (35,218,233);
+	background-color: rgb(47,47,47)
+}
+
+</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="placeholderText">
+            <string>  Nro Mesa</string>
+           </property>
+          </widget>
+          <widget class="QPushButton" name="bt_confirmar_6">
+           <property name="geometry">
+            <rect>
+             <x>570</x>
+             <y>660</y>
+             <width>161</width>
+             <height>51</height>
+            </rect>
+           </property>
+           <property name="font">
+            <font>
+             <pointsize>20</pointsize>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QPushButton {
+	border-radius: 8px;
+	background-color: rgb(185, 212, 248);
+	color: rgb(255, 255, 255);
+}
+
+QPushButton:hover{
+	
+	background-color: rgb(101, 155, 219);
+}</string>
+           </property>
+           <property name="text">
+            <string>Eliminar</string>
+           </property>
+           <property name="autoDefault">
+            <bool>false</bool>
+           </property>
+          </widget>
+          <widget class="QLabel" name="label_29">
+           <property name="geometry">
+            <rect>
+             <x>210</x>
+             <y>660</y>
+             <width>111</width>
+             <height>21</height>
+            </rect>
+           </property>
+           <property name="font">
+            <font>
+             <family>Noto Sans</family>
+             <pointsize>16</pointsize>
+             <weight>50</weight>
+             <italic>false</italic>
+             <bold>false</bold>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">font: 16pt &quot;Noto Sans&quot;;
+color: rgb(255, 255, 255);</string>
+           </property>
+           <property name="text">
+            <string>Mesa</string>
+           </property>
           </widget>
          </widget>
          <widget class="QWidget" name="pg_mis_reservas">
@@ -815,7 +874,7 @@ color: rgb(255, 0, 0);</string>
 color: rgb(255, 255, 255);</string>
            </property>
            <property name="text">
-            <string>Mis reservas</string>
+            <string>Items</string>
            </property>
           </widget>
          </widget>
@@ -823,8 +882,8 @@ color: rgb(255, 255, 255);</string>
           <widget class="QLabel" name="label_8">
            <property name="geometry">
             <rect>
-             <x>340</x>
-             <y>240</y>
+             <x>300</x>
+             <y>250</y>
              <width>281</width>
              <height>151</height>
             </rect>
@@ -834,7 +893,7 @@ color: rgb(255, 255, 255);</string>
 color: rgb(255, 255, 255);</string>
            </property>
            <property name="text">
-            <string>Mi cuenta</string>
+            <string>Cuentas</string>
            </property>
           </widget>
          </widget>
