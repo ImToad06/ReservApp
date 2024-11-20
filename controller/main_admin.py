@@ -1,5 +1,6 @@
 from datetime import date
 
+from PyQt5.QtCore import QDate
 from PyQt5.QtWidgets import QMainWindow
 from PyQt5.uic import loadUi
 
@@ -33,6 +34,10 @@ class MainAdmin(QMainWindow):
         self.bt_actualizar_item.clicked.connect(self.actualizar_item)
         self.bt_eliminar_item.clicked.connect(self.eliminar_item)
         self.bt_crear_cuenta.clicked.connect(self.crear_cuenta)
+        self.bt_buscar_cuenta.clicked.connect(self.buscar_cuenta)
+        self.bt_buscar_actualizar_cuenta.clicked.connect(self.llenar_actualizacion)
+        self.bt_actualizar_cuenta.clicked.connect(self.actualizar_cuenta)
+        self.bt_eliminar_cuenta.clicked.connect(self.eliminar_cuenta)
 
     def cambiar_mesas(self):
         self.pg_items.hide()
@@ -275,6 +280,123 @@ class MainAdmin(QMainWindow):
                     db.conexion.commit()
                     self.l_info_crear_cuenta.setStyleSheet("color: white;")
                     self.l_info_crear_cuenta.setText("Cuenta creada exitosamente.")
+        db.conexion.close()
+
+    def buscar_cuenta(self):
+        db = Conexion()
+        cedula = self.le_buscar_cedula_cuenta.text().strip()
+        with open(
+            "/home/juan/dev/reservapp/queries/buscar_cuenta_cc.sql", "r"
+        ) as archivo:
+            buscar_cuenta = archivo.read()
+        db.cursor.execute(buscar_cuenta, (cedula,))
+        cuenta = db.cursor.fetchone()
+        if cuenta is None:
+            self.l_info_buscar_cuenta.setStyleSheet("color: red;")
+            self.l_info_buscar_cuenta.setText("Error: La cuenta no existe.")
+        else:
+            self.l_info_buscar_cuenta.setStyleSheet("color: white;")
+            self.l_info_buscar_cuenta.setText(
+                f"Cuenta encontrada! su id es {cuenta[0]}"
+            )
+        db.conexion.close()
+
+    def llenar_actualizacion(self):
+        db = Conexion()
+        cedula = self.le_actualizar_id_cuenta.text().strip()
+        with open(
+            "/home/juan/dev/reservapp/queries/buscar_cuenta_cc.sql", "r"
+        ) as archivo:
+            buscar_cuenta = archivo.read()
+        db.cursor.execute(buscar_cuenta, (cedula,))
+        cuenta = db.cursor.fetchone()
+        if cuenta is not None:
+            self.le_actualizar_nombre_cuenta.setText(cuenta[1])
+            self.le_actualizar_apellido_cuenta.setText(cuenta[2])
+            self.le_actualizar_cedula_cuenta.setText(cuenta[8])
+            fecha = QDate(cuenta[9])
+            self.de_actualizar_fnaci_cuenta.setDate(fecha)
+            self.le_actualizar_email_cuenta.setText(cuenta[3])
+            self.le_actualizar_direccion_cuenta.setText(cuenta[4])
+            self.le_actualizar_telefono_cuenta.setText(cuenta[5])
+            match cuenta[7]:
+                case "a":
+                    self.cb_actualizar_tipo_cuenta.setCurrentText("Administrador")
+                case "e":
+                    self.cb_actualizar_tipo_cuenta.setCurrentText("Empleado")
+                case "c":
+                    self.cb_actualizar_tipo_cuenta.setCurrentText("Cliente")
+
+    def actualizar_cuenta(self):
+        db = Conexion()
+        usuario = Usuario()
+        usuario.nombres = self.le_actualizar_nombre_cuenta.text()
+        usuario.apellidos = self.le_actualizar_apellido_cuenta.text()
+        usuario.cedula = self.le_actualizar_cedula_cuenta.text()
+        usuario.fnaci = self.de_actualizar_fnaci_cuenta.date().toString("yyyy-MM-dd")
+        usuario.email = self.le_actualizar_email_cuenta.text()
+        usuario.direccion = self.le_actualizar_direccion_cuenta.text()
+        usuario.telefono = self.le_actualizar_telefono_cuenta.text()
+        db.cursor.execute("SELECT * FROM usuarios WHERE usu_cc = %s", (usuario.cedula,))
+        usu_id = db.cursor.fetchone()
+        ema_id = buscar_email(usuario.email)
+        dir_id = buscar_direccion(usuario.direccion)
+        tel_id = buscar_telefono(usuario.telefono)
+        tipo = ""
+        match self.cb_actualizar_tipo_cuenta.currentText():
+            case "Empleado":
+                tipo = "e"
+            case "Administrador":
+                tipo = "a"
+            case "Cliente":
+                tipo = "c"
+        with open(
+            "/home/juan/dev/reservapp/queries/actualizar_cuenta.sql", "r"
+        ) as archivo:
+            actualizar_cuenta = archivo.read()
+        if (
+            ema_id is not None
+            and dir_id is not None
+            and tel_id is not None
+            and usu_id is not None
+        ):
+            db.cursor.execute(
+                actualizar_cuenta,
+                (
+                    usuario.nombres,
+                    usuario.apellidos,
+                    usuario.cedula,
+                    usuario.fnaci,
+                    ema_id[0],
+                    dir_id[0],
+                    tel_id[0],
+                    tipo,
+                    usu_id[0],
+                ),
+            )
+            self.l_info_actualizar_cuenta.setStyleSheet("color: white;")
+            self.l_info_actualizar_cuenta.setText("Cuenta actualizada exitosamente.")
+        db.conexion.commit()
+        db.conexion.close()
+
+    def eliminar_cuenta(self):
+        db = Conexion()
+        usu_id = self.le_eliminar_id_cuenta.text().strip()
+        db.cursor.execute("SELECT * FROM usuarios WHERE usu_id = %s", (usu_id,))
+        usuario = db.cursor.fetchone()
+        if usuario is not None:
+            with open(
+                "/home/juan/dev/reservapp/queries/eliminar_cuenta.sql", "r"
+            ) as archivo:
+                eliminar_cuenta = archivo.read()
+            db.cursor.execute(eliminar_cuenta, (usu_id,))
+            db.conexion.commit()
+            self.l_info_eliminar_cuenta.setStyleSheet("color: white;")
+            self.l_info_eliminar_cuenta.setText("Cuenta eliminada exitosamente.")
+        else:
+            self.l_info_eliminar_cuenta.setStyleSheet("color: red;")
+            self.l_info_eliminar_cuenta.setText("Error: Cuenta no encontrada.")
+        db.conexion.close()
 
 
 def mesa_existe(nro_mesa) -> bool:

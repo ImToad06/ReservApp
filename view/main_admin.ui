@@ -2039,7 +2039,7 @@ color: rgb(255, 255, 255);</string>
           <string notr="true">color: rgb(185, 212, 248)</string>
          </property>
          <property name="text">
-          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:24pt;&quot;&gt;Buscar ítem&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:24pt;&quot;&gt;Buscar cuenta&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignCenter</set>
@@ -2182,7 +2182,7 @@ color: rgb(255, 255, 255);</string>
           <string notr="true">color: rgb(185, 212, 248)</string>
          </property>
          <property name="text">
-          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:24pt;&quot;&gt;Eliminar ítem&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:24pt;&quot;&gt;Eliminar cuenta&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignCenter</set>
@@ -3098,7 +3098,7 @@ QLineEdit:focus{
 color: rgb(255, 255, 255);</string>
          </property>
          <property name="placeholderText">
-          <string>Empleado o Aministrador</string>
+          <string>Empleado o Administrador</string>
          </property>
          <item>
           <property name="text">
@@ -3113,6 +3113,11 @@ color: rgb(255, 255, 255);</string>
          <item>
           <property name="text">
            <string>Administrador</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Cliente</string>
           </property>
          </item>
         </widget>
@@ -3697,6 +3702,39 @@ color: rgb(255, 0, 0);</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="bt_buscar_actualizar_cuenta">
+         <property name="geometry">
+          <rect>
+           <x>860</x>
+           <y>130</y>
+           <width>111</width>
+           <height>41</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <pointsize>20</pointsize>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton {
+	border-radius: 8px;
+	background-color: rgb(185, 212, 248);
+	color: rgb(255, 255, 255);
+}
+
+QPushButton:hover{
+	
+	background-color: rgb(101, 155, 219);
+}</string>
+         </property>
+         <property name="text">
+          <string>Buscar</string>
+         </property>
+         <property name="autoDefault">
+          <bool>false</bool>
          </property>
         </widget>
        </widget>
