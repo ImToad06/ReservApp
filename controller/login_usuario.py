@@ -1,8 +1,10 @@
 from PyQt5.QtWidgets import QMainWindow
 from PyQt5.uic import loadUi
 
+from controller.main_admin import MainAdmin
 from controller.main_cliente import MainCliente
 from model.conexion import Conexion
+from model.modelos import Usuario
 
 
 class LoginCliente(QMainWindow):
@@ -41,7 +43,6 @@ class LoginCliente(QMainWindow):
             self.l_error.setText("Error! Contraseña incorrecta.")
         elif cuenta[2] == clave:
             self.main_cliente = MainCliente(usu_id=cuenta[0])
-            print(cuenta[0])
             self.close()
             self.main_cliente.show()
         db.conexion.close()
@@ -58,15 +59,19 @@ class LoginEmpleado(QMainWindow):
         usu_cedula = self.le_dni.text()
         db = Conexion()
         db.cursor.execute(
-            f"select u.usu_tipo from usuarios u where u.usu_cc = '{usu_cedula}'"
+            f"select u.usu_tipo, u.usu_id from usuarios u where u.usu_cc = '{usu_cedula}'"
         )
         cuenta = db.cursor.fetchone()
         if cuenta is None:
             self.l_error.setText("Error! La cuenta no existe.")
         elif cuenta[0] == "c":
             self.l_error.setText("Error! La cuenta no es de tipo empleado.")
-        else:
-            self.main = MainCliente()
+        elif cuenta[0] == "e":
+            self.main = MainCliente(cuenta[1])
+            self.close()
+            self.main.show()
+        elif cuenta[0] == "a":
+            self.main = MainAdmin(cuenta[1])
             self.close()
             self.main.show()
         db.conexion.close()

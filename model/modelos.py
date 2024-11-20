@@ -23,6 +23,7 @@ class Item:
     def __init__(self) -> None:
         self.nombre = ""
         self.descripcion = ""
+        self.tipo = ""
         self.precio = 0.0
 
 
