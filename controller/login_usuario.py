@@ -34,7 +34,7 @@ class LoginCliente(QMainWindow):
         email = self.le_email.text()
         clave = self.le_clave.text()
         db.cursor.execute(
-            f"select u.usu_id, e.ema_email, u.usu_clave from usuarios u inner join emails e on u.ema_id = e.ema_id where e.ema_email = '{email}'"
+            f"select u.usu_id, e.ema_email, u.usu_clave from usuarios u inner join emails e on u.ema_id = e.ema_id where e.ema_email = '{email}' and u.usu_estado = 'a';"
         )
         cuenta = db.cursor.fetchone()
         if cuenta is None:

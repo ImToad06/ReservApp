@@ -217,7 +217,7 @@ QPushButton:hover{
        <item>
         <widget class="QStackedWidget" name="sw_main">
          <property name="currentIndex">
-          <number>0</number>
+          <number>1</number>
          </property>
          <widget class="QWidget" name="pg_reservar">
           <property name="minimumSize">
@@ -1261,7 +1261,7 @@ QLineEdit:focus{
             <string/>
            </property>
           </widget>
-          <widget class="QLineEdit" name="le_actualizar_clave_2">
+          <widget class="QLineEdit" name="le_actualizar_cedula">
            <property name="geometry">
             <rect>
              <x>220</x>
@@ -1520,6 +1520,22 @@ QLineEdit:focus{
             <bool>true</bool>
            </property>
           </widget>
+          <widget class="QLabel" name="l_info_actualizar_datos">
+           <property name="geometry">
+            <rect>
+             <x>30</x>
+             <y>510</y>
+             <width>731</width>
+             <height>21</height>
+            </rect>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">font: 14pt &quot;Noto Sans&quot;;</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
          </widget>
          <widget class="QWidget" name="pg_mis_reservas">
           <property name="minimumSize">
@@ -1660,9 +1676,9 @@ QPushButton:hover{
            <property name="geometry">
             <rect>
              <x>110</x>
-             <y>220</y>
+             <y>240</y>
              <width>731</width>
-             <height>71</height>
+             <height>61</height>
             </rect>
            </property>
            <property name="font">
@@ -1782,7 +1798,7 @@ QPushButton:hover{
            </column>
            <column>
             <property name="text">
-             <string>PERSONA</string>
+             <string>PERSONAS</string>
             </property>
             <property name="font">
              <font>
@@ -1810,7 +1826,7 @@ QPushButton:hover{
             </property>
            </column>
           </widget>
-          <widget class="QPushButton" name="bt_atualizar_mis_reservas">
+          <widget class="QPushButton" name="bt_actualizar_mis_reservas">
            <property name="geometry">
             <rect>
              <x>750</x>
@@ -1847,6 +1863,22 @@ QPushButton:hover{
            </property>
            <property name="autoDefault">
             <bool>false</bool>
+           </property>
+          </widget>
+          <widget class="QLabel" name="l_info_cancelar_reserva">
+           <property name="geometry">
+            <rect>
+             <x>30</x>
+             <y>200</y>
+             <width>671</width>
+             <height>17</height>
+            </rect>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">font: 12pt &quot;Noto Sans&quot;;</string>
+           </property>
+           <property name="text">
+            <string/>
            </property>
           </widget>
          </widget>
@@ -1963,8 +1995,8 @@ color: rgb(255, 255, 255);</string>
           <widget class="QLabel" name="label_14">
            <property name="geometry">
             <rect>
-             <x>510</x>
-             <y>150</y>
+             <x>480</x>
+             <y>170</y>
              <width>211</width>
              <height>41</height>
             </rect>
@@ -1989,8 +2021,8 @@ color: rgb(255, 255, 255);</string>
           <widget class="QLabel" name="label_15">
            <property name="geometry">
             <rect>
-             <x>510</x>
-             <y>210</y>
+             <x>480</x>
+             <y>230</y>
              <width>211</width>
              <height>41</height>
             </rect>
@@ -2015,8 +2047,8 @@ color: rgb(255, 255, 255);</string>
           <widget class="QLabel" name="label_16">
            <property name="geometry">
             <rect>
-             <x>510</x>
-             <y>270</y>
+             <x>480</x>
+             <y>290</y>
              <width>211</width>
              <height>41</height>
             </rect>
@@ -2062,32 +2094,6 @@ color: rgb(255, 255, 255);</string>
            </property>
            <property name="text">
             <string>TELEFONO</string>
-           </property>
-          </widget>
-          <widget class="QLabel" name="label_18">
-           <property name="geometry">
-            <rect>
-             <x>510</x>
-             <y>330</y>
-             <width>221</width>
-             <height>41</height>
-            </rect>
-           </property>
-           <property name="font">
-            <font>
-             <family>Noto Sans</family>
-             <pointsize>16</pointsize>
-             <weight>50</weight>
-             <italic>false</italic>
-             <bold>false</bold>
-            </font>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">font: 16pt &quot;Noto Sans&quot;;
-color: rgb(255, 255, 255);</string>
-           </property>
-           <property name="text">
-            <string>CONTRASEÑA</string>
            </property>
           </widget>
           <widget class="QPushButton" name="bt_actualizar_mis_datos">
@@ -2311,46 +2317,8 @@ QLineEdit:focus{
           <widget class="QLineEdit" name="le_direccion">
            <property name="geometry">
             <rect>
-             <x>750</x>
-             <y>270</y>
-             <width>211</width>
-             <height>41</height>
-            </rect>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">QLineEdit{
-	border: 2px solid rgb(38, 38, 48);
-	border -radius: 15px;
-	color: #FFF;
-	
-	background-color: rgb(36, 36, 36);
-
-}
-
-QLineEdit:hover{
-	border : 2px solid rgb(48,50,62);
- 
-}
-
-QLineEdit:focus{
-	border: 2px solid (35,218,233);
-	background-color: rgb(47,47,47)
-}
-
-</string>
-           </property>
-           <property name="text">
-            <string/>
-           </property>
-           <property name="placeholderText">
-            <string/>
-           </property>
-          </widget>
-          <widget class="QLineEdit" name="le_contrasena">
-           <property name="geometry">
-            <rect>
-             <x>750</x>
-             <y>330</y>
+             <x>720</x>
+             <y>290</y>
              <width>211</width>
              <height>41</height>
             </rect>
@@ -2387,8 +2355,8 @@ QLineEdit:focus{
           <widget class="QLineEdit" name="le_email">
            <property name="geometry">
             <rect>
-             <x>750</x>
-             <y>210</y>
+             <x>720</x>
+             <y>230</y>
              <width>211</width>
              <height>41</height>
             </rect>
@@ -2425,8 +2393,8 @@ QLineEdit:focus{
           <widget class="QDateEdit" name="de_fecnac">
            <property name="geometry">
             <rect>
-             <x>750</x>
-             <y>160</y>
+             <x>720</x>
+             <y>180</y>
              <width>211</width>
              <height>31</height>
             </rect>
