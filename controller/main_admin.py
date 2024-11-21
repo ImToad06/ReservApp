@@ -120,6 +120,8 @@ class MainAdmin(QMainWindow):
         else:
             self.l_info_buscar_mesa.setStyleSheet("color: white;")
             self.l_info_buscar_mesa.setText(f"Mesa encontrada, su id es {mesa[0]}")
+            self.le_actualizar_id_mesa.setText(f"{mesa[0]}")
+            self.le_actualizar_capacidad_mesa.setText(f"{mesa[2]}")
         db.conexion.close()
 
     def eliminar_mesa(self):
@@ -185,6 +187,8 @@ class MainAdmin(QMainWindow):
         else:
             self.l_info_buscar_item.setStyleSheet("color: white;")
             self.l_info_buscar_item.setText(f"Item encontrado, su id es {item[0]}")
+            self.le_actualizar_id_item.setText(f"{item[0]}")
+            self.le_actualizar_nombre_item.setText(f"{item[1]}")
 
     def actualizar_item(self):
         db = Conexion()
@@ -201,10 +205,10 @@ class MainAdmin(QMainWindow):
             crear_precio(pre_precio)
             precio = buscar_precio(pre_precio)
             if precio is not None:
-                t = time.time()
+                # t = time.time()
                 db.cursor.execute(actualizar_item, (ite_nom, precio[0], ite_id))
-                t = time.time() - t
-                print(f"tiempo ejecucion: {t}")
+                # t = time.time() - t
+                # print(f"tiempo ejecucion: {t}")
             db.conexion.commit()
             db.conexion.close()
             self.l_info_actualizar_item.setStyleSheet("color: white;")

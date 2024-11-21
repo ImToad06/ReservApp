@@ -4,4 +4,4 @@ SELECT
 FROM
   enc_reservas e INNER JOIN usuarios u ON e.usu_id = u.usu_id
 WHERE
-  u.usu_id = %s and e.ere_estado = 'a' or e.ere_estado = 'f';
+  e.usu_id = %s and (e.ere_estado = 'a' or e.ere_estado = 'f');

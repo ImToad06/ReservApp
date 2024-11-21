@@ -68,6 +68,7 @@ class MainEmpleado(QMainWindow):
             self.l_info_buscar_reserva.setText(
                 f"Reserva enconrada! su id es {reserva[0]}."
             )
+            self.le_anadir_id_reserva.setText(f"{reserva[0]}")
         else:
             self.l_info_buscar_reserva.setStyleSheet(
                 "color: red; font: 14pt 'Noto Sans';"

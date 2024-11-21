@@ -210,7 +210,7 @@ QPushButton:hover{
         </rect>
        </property>
        <property name="currentIndex">
-        <number>2</number>
+        <number>0</number>
        </property>
        <widget class="QWidget" name="pg_mesas">
         <property name="minimumSize">
@@ -3634,7 +3634,7 @@ QLineEdit:focus{
 color: rgb(255, 255, 255);</string>
          </property>
          <property name="text">
-          <string>Id</string>
+          <string>Cc</string>
          </property>
         </widget>
         <widget class="QLineEdit" name="le_actualizar_id_cuenta">
@@ -3672,7 +3672,7 @@ QLineEdit:focus{
           <string/>
          </property>
          <property name="placeholderText">
-          <string>Id</string>
+          <string>Cédula</string>
          </property>
         </widget>
         <widget class="QLabel" name="l_info_actualizar_cuenta">
