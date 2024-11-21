@@ -207,7 +207,7 @@ QPushButton:hover{
        <item>
         <widget class="QStackedWidget" name="sw_vista">
          <property name="currentIndex">
-          <number>0</number>
+          <number>2</number>
          </property>
          <widget class="QWidget" name="pg_reservas">
           <property name="minimumSize">
@@ -658,7 +658,7 @@ color: rgb(255, 255, 255);</string>
             <string>Productos</string>
            </property>
           </widget>
-          <widget class="QPushButton" name="br_anadir_producto">
+          <widget class="QPushButton" name="bt_anadir_producto">
            <property name="geometry">
             <rect>
              <x>100</x>
@@ -746,6 +746,23 @@ color: rgb(255, 255, 255);</string>
             <bool>true</bool>
            </property>
           </widget>
+          <widget class="QLabel" name="l_info_insertar_prod">
+           <property name="geometry">
+            <rect>
+             <x>50</x>
+             <y>600</y>
+             <width>481</width>
+             <height>41</height>
+            </rect>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">font: 14pt &quot;Noto Sans&quot;;
+color: rgb(255, 255, 255);</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
           <zorder>label_10</zorder>
           <zorder>label_2</zorder>
           <zorder>label_3</zorder>
@@ -760,9 +777,10 @@ color: rgb(255, 255, 255);</string>
           <zorder>le_anadir_id_reserva</zorder>
           <zorder>label_9</zorder>
           <zorder>cb_anadir_producto</zorder>
-          <zorder>br_anadir_producto</zorder>
+          <zorder>bt_anadir_producto</zorder>
           <zorder>sb_cant_producto</zorder>
           <zorder>label_11</zorder>
+          <zorder>l_info_insertar_prod</zorder>
          </widget>
          <widget class="QWidget" name="pg_facturar">
           <property name="minimumSize">
@@ -775,7 +793,7 @@ color: rgb(255, 255, 255);</string>
            <property name="geometry">
             <rect>
              <x>310</x>
-             <y>40</y>
+             <y>20</y>
              <width>351</width>
              <height>81</height>
             </rect>
@@ -795,7 +813,7 @@ color: rgb(185, 212, 248)</string>
            <property name="geometry">
             <rect>
              <x>40</x>
-             <y>150</y>
+             <y>110</y>
              <width>91</width>
              <height>41</height>
             </rect>
@@ -812,7 +830,7 @@ color: rgb(255, 255, 255);</string>
            <property name="geometry">
             <rect>
              <x>150</x>
-             <y>150</y>
+             <y>110</y>
              <width>241</width>
              <height>41</height>
             </rect>
@@ -830,7 +848,7 @@ color: rgb(255, 255, 255);</string>
            <property name="geometry">
             <rect>
              <x>520</x>
-             <y>150</y>
+             <y>110</y>
              <width>211</width>
              <height>41</height>
             </rect>
@@ -845,7 +863,7 @@ color: rgb(255, 255, 255);</string>
            <property name="geometry">
             <rect>
              <x>420</x>
-             <y>150</y>
+             <y>110</y>
              <width>91</width>
              <height>41</height>
             </rect>
@@ -862,7 +880,7 @@ color: rgb(255, 255, 255);</string>
            <property name="geometry">
             <rect>
              <x>750</x>
-             <y>150</y>
+             <y>110</y>
              <width>211</width>
              <height>41</height>
             </rect>
@@ -926,7 +944,7 @@ font: 16pt &quot;Noto Sans&quot;;
 color: rgb(0, 0, 0);</string>
            </property>
            <attribute name="horizontalHeaderDefaultSectionSize">
-            <number>454</number>
+            <number>227</number>
            </attribute>
            <column>
             <property name="text">
@@ -959,7 +977,61 @@ color: rgb(0, 0, 0);</string>
            </column>
            <column>
             <property name="text">
+             <string>Cantidad</string>
+            </property>
+            <property name="font">
+             <font>
+              <family>Noto Sans</family>
+              <pointsize>14</pointsize>
+             </font>
+            </property>
+            <property name="background">
+             <color>
+              <red>157</red>
+              <green>186</green>
+              <blue>225</blue>
+             </color>
+            </property>
+            <property name="foreground">
+             <brush brushstyle="SolidPattern">
+              <color alpha="255">
+               <red>255</red>
+               <green>255</green>
+               <blue>255</blue>
+              </color>
+             </brush>
+            </property>
+           </column>
+           <column>
+            <property name="text">
              <string>Precio</string>
+            </property>
+            <property name="font">
+             <font>
+              <family>Noto Sans</family>
+              <pointsize>14</pointsize>
+             </font>
+            </property>
+            <property name="background">
+             <color>
+              <red>157</red>
+              <green>186</green>
+              <blue>225</blue>
+             </color>
+            </property>
+            <property name="foreground">
+             <brush brushstyle="SolidPattern">
+              <color alpha="255">
+               <red>255</red>
+               <green>255</green>
+               <blue>255</blue>
+              </color>
+             </brush>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>SubTotal</string>
             </property>
             <property name="font">
              <font>
@@ -1058,7 +1130,7 @@ QPushButton:hover{
             <bool>false</bool>
            </property>
           </widget>
-          <widget class="QLabel" name="l_info_buscar_reserva_2">
+          <widget class="QLabel" name="l_info_finalizar">
            <property name="geometry">
             <rect>
              <x>730</x>
@@ -1076,6 +1148,23 @@ color: rgb(255, 255, 255);</string>
            </property>
            <property name="wordWrap">
             <bool>true</bool>
+           </property>
+          </widget>
+          <widget class="QLabel" name="l_info_generar_factura">
+           <property name="geometry">
+            <rect>
+             <x>40</x>
+             <y>160</y>
+             <width>481</width>
+             <height>41</height>
+            </rect>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">font: 14pt &quot;Noto Sans&quot;;
+color: red;</string>
+           </property>
+           <property name="text">
+            <string/>
            </property>
           </widget>
          </widget>

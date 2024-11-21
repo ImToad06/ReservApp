@@ -813,6 +813,28 @@ color: rgb(0, 0, 0);</string>
             </property>
            </column>
           </widget>
+          <widget class="QLabel" name="label_18">
+           <property name="geometry">
+            <rect>
+             <x>650</x>
+             <y>310</y>
+             <width>351</width>
+             <height>301</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="pixmap">
+            <pixmap>../resources/reserva_icon.png</pixmap>
+           </property>
+           <property name="scaledContents">
+            <bool>true</bool>
+           </property>
+           <property name="wordWrap">
+            <bool>false</bool>
+           </property>
+          </widget>
          </widget>
          <widget class="QWidget" name="pg_actualizar">
           <property name="minimumSize">

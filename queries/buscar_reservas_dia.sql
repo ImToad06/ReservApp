@@ -5,4 +5,4 @@ FROM
   enc_reservas e INNER JOIN mesas m ON e.mes_id = m.mes_id
   INNER JOIN usuarios u ON e.usu_id = u.usu_id
 WHERE
-  e.ere_fecha = %s;
+  e.ere_fecha = %s AND e.ere_estado = 'a';
