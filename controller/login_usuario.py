@@ -3,8 +3,8 @@ from PyQt5.uic import loadUi
 
 from controller.main_admin import MainAdmin
 from controller.main_cliente import MainCliente
+from controller.main_empleado import MainEmpleado
 from model.conexion import Conexion
-from model.modelos import Usuario
 
 
 class LoginCliente(QMainWindow):
@@ -67,7 +67,7 @@ class LoginEmpleado(QMainWindow):
         elif cuenta[0] == "c":
             self.l_error.setText("Error! La cuenta no es de tipo empleado.")
         elif cuenta[0] == "e":
-            self.main = MainCliente(cuenta[1])
+            self.main = MainEmpleado(cuenta[1])
             self.close()
             self.main.show()
         elif cuenta[0] == "a":

@@ -1,3 +1,4 @@
+import time
 from datetime import date
 
 from PyQt5.QtCore import QDate
@@ -64,6 +65,7 @@ class MainAdmin(QMainWindow):
             self.l_info_crear_mesa.setStyleSheet("color: red;")
             self.l_info_crear_mesa.setText("Error! la mesa ya se encuentra creada.")
         else:
+            # t = time.time()
             db.cursor.execute(
                 crear_mesa,
                 (
@@ -71,6 +73,8 @@ class MainAdmin(QMainWindow):
                     capacidad_mesa,
                 ),
             )
+            # t = time.time() - t
+            # print(f"tiempo ejecucion: {t}")
             db.conexion.commit()
             db.conexion.close()
             self.l_info_crear_mesa.setStyleSheet("color: white;")
@@ -197,7 +201,10 @@ class MainAdmin(QMainWindow):
             crear_precio(pre_precio)
             precio = buscar_precio(pre_precio)
             if precio is not None:
+                t = time.time()
                 db.cursor.execute(actualizar_item, (ite_nom, precio[0], ite_id))
+                t = time.time() - t
+                print(f"tiempo ejecucion: {t}")
             db.conexion.commit()
             db.conexion.close()
             self.l_info_actualizar_item.setStyleSheet("color: white;")
@@ -308,7 +315,10 @@ class MainAdmin(QMainWindow):
             "/home/juan/dev/reservapp/queries/buscar_cuenta_cc.sql", "r"
         ) as archivo:
             buscar_cuenta = archivo.read()
+        # t = time.time()
         db.cursor.execute(buscar_cuenta, (cedula,))
+        # t = time.time() - t
+        # print(f"tiempo ejecucion: {t}")
         cuenta = db.cursor.fetchone()
         if cuenta is not None:
             self.le_actualizar_nombre_cuenta.setText(cuenta[1])
@@ -476,7 +486,10 @@ def buscar_telefono(tel_telefono):
     db = Conexion()
     with open("/home/juan/dev/reservapp/queries/buscar_telefono.sql", "r") as archivo:
         buscar_telefono = archivo.read()
+    # t = time.time()
     db.cursor.execute(buscar_telefono, (tel_telefono,))
+    # t = time.time() - t
+    # print(f"tiempo de ejecucion: {t}")
     telefono = db.cursor.fetchone()
     db.conexion.close()
     return telefono
@@ -498,7 +511,10 @@ def crear_email(ema_email):
     if email is None:
         with open("/home/juan/dev/reservapp/queries/crear_email.sql", "r") as archivo:
             crear_email = archivo.read()
+        # t = time.time()
         db.cursor.execute(crear_email, (ema_email, date.today().strftime("%Y-%m-%d")))
+        # t = time.time() - t
+        # print(f"tiempo ejecucion: {t}")
         db.conexion.commit()
     db.conexion.close()
 

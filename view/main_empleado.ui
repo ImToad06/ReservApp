@@ -76,7 +76,7 @@ color: rgb(185, 212, 248)</string>
         <string>Bienvenido, Juan!</string>
        </property>
       </widget>
-      <widget class="QPushButton" name="bt_reservar">
+      <widget class="QPushButton" name="bt_reservas">
        <property name="geometry">
         <rect>
          <x>10</x>
@@ -109,7 +109,7 @@ QPushButton:hover{
         <bool>false</bool>
        </property>
       </widget>
-      <widget class="QPushButton" name="bt_mis_reservas">
+      <widget class="QPushButton" name="bt_pedidos">
        <property name="geometry">
         <rect>
          <x>10</x>
@@ -142,7 +142,7 @@ QPushButton:hover{
         <bool>false</bool>
        </property>
       </widget>
-      <widget class="QPushButton" name="bt_mi_cuenta">
+      <widget class="QPushButton" name="bt_facturar">
        <property name="geometry">
         <rect>
          <x>10</x>
@@ -206,13 +206,22 @@ QPushButton:hover{
        </property>
        <item>
         <widget class="QStackedWidget" name="sw_vista">
-         <widget class="QWidget" name="pg_reservar">
+         <property name="currentIndex">
+          <number>0</number>
+         </property>
+         <widget class="QWidget" name="pg_reservas">
+          <property name="minimumSize">
+           <size>
+            <width>1280</width>
+            <height>780</height>
+           </size>
+          </property>
           <widget class="QLabel" name="label">
            <property name="geometry">
             <rect>
-             <x>20</x>
+             <x>280</x>
              <y>20</y>
-             <width>731</width>
+             <width>431</width>
              <height>81</height>
             </rect>
            </property>
@@ -232,7 +241,7 @@ QPushButton:hover{
             <set>Qt::AlignCenter</set>
            </property>
           </widget>
-          <widget class="QPushButton" name="bt_confirmar">
+          <widget class="QPushButton" name="bt_actualizar_reservas">
            <property name="geometry">
             <rect>
              <x>830</x>
@@ -265,55 +274,31 @@ QPushButton:hover{
             <bool>false</bool>
            </property>
           </widget>
-          <widget class="QLabel" name="l_error">
-           <property name="geometry">
-            <rect>
-             <x>30</x>
-             <y>220</y>
-             <width>961</width>
-             <height>21</height>
-            </rect>
-           </property>
-           <property name="font">
-            <font>
-             <family>Noto Sans</family>
-             <pointsize>12</pointsize>
-             <weight>50</weight>
-             <italic>false</italic>
-             <bold>false</bold>
-            </font>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">font: 12pt &quot;Noto Sans&quot;;
-color: rgb(255, 0, 0);</string>
-           </property>
-           <property name="text">
-            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-           </property>
-           <property name="alignment">
-            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
-           </property>
-          </widget>
-          <widget class="QTableWidget" name="tw_mesas">
+          <widget class="QTableWidget" name="tw_reservas">
            <property name="geometry">
             <rect>
              <x>40</x>
-             <y>120</y>
+             <y>130</y>
              <width>951</width>
              <height>501</height>
             </rect>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(255, 255, 255);
+font: 16pt &quot;Noto Sans&quot;;
+color: rgb(0, 0, 0);</string>
            </property>
            <property name="sortingEnabled">
             <bool>false</bool>
            </property>
            <property name="columnCount">
-            <number>3</number>
+            <number>4</number>
            </property>
            <attribute name="horizontalHeaderMinimumSectionSize">
             <number>60</number>
            </attribute>
            <attribute name="horizontalHeaderDefaultSectionSize">
-            <number>316</number>
+            <number>237</number>
            </attribute>
            <attribute name="horizontalHeaderHighlightSections">
             <bool>true</bool>
@@ -347,10 +332,38 @@ color: rgb(255, 0, 0);</string>
            </column>
            <column>
             <property name="text">
+             <string>Nombre</string>
+            </property>
+            <property name="font">
+             <font>
+              <family>Noto Sans</family>
+              <pointsize>14</pointsize>
+             </font>
+            </property>
+            <property name="background">
+             <color>
+              <red>157</red>
+              <green>186</green>
+              <blue>225</blue>
+             </color>
+            </property>
+            <property name="foreground">
+             <brush brushstyle="SolidPattern">
+              <color alpha="255">
+               <red>255</red>
+               <green>255</green>
+               <blue>255</blue>
+              </color>
+             </brush>
+            </property>
+           </column>
+           <column>
+            <property name="text">
              <string>Personas</string>
             </property>
             <property name="font">
              <font>
+              <family>Noto Sans</family>
               <pointsize>14</pointsize>
              </font>
             </property>
@@ -400,41 +413,669 @@ color: rgb(255, 0, 0);</string>
            </column>
           </widget>
          </widget>
-         <widget class="QWidget" name="pg_mis_reservas">
+         <widget class="QWidget" name="pg_pedidos">
+          <property name="minimumSize">
+           <size>
+            <width>1280</width>
+            <height>780</height>
+           </size>
+          </property>
+          <widget class="QLabel" name="label_2">
+           <property name="geometry">
+            <rect>
+             <x>250</x>
+             <y>30</y>
+             <width>601</width>
+             <height>61</height>
+            </rect>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">font: 32pt &quot;Noto Sans&quot;;
+color: rgb(185, 212, 248)</string>
+           </property>
+           <property name="text">
+            <string>Añadir pedidos a reserva</string>
+           </property>
+          </widget>
+          <widget class="QLabel" name="label_3">
+           <property name="geometry">
+            <rect>
+             <x>40</x>
+             <y>120</y>
+             <width>331</width>
+             <height>41</height>
+            </rect>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">font: 26pt &quot;Noto Sans&quot;;
+color: rgb(185, 212, 248);</string>
+           </property>
+           <property name="text">
+            <string>Buscar reserva</string>
+           </property>
+          </widget>
+          <widget class="QLabel" name="label_4">
+           <property name="geometry">
+            <rect>
+             <x>40</x>
+             <y>170</y>
+             <width>91</width>
+             <height>41</height>
+            </rect>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">font: 22pt &quot;Noto Sans&quot;;
+color: rgb(255, 255, 255);</string>
+           </property>
+           <property name="text">
+            <string>Mesa</string>
+           </property>
+          </widget>
+          <widget class="QLineEdit" name="le_buscar_nro_mesa">
+           <property name="geometry">
+            <rect>
+             <x>150</x>
+             <y>170</y>
+             <width>241</width>
+             <height>41</height>
+            </rect>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(43, 45, 69);
+font: 16pt &quot;Noto Sans&quot;;
+color: rgb(255, 255, 255);</string>
+           </property>
+           <property name="placeholderText">
+            <string>Nro Mesa</string>
+           </property>
+          </widget>
+          <widget class="QLabel" name="label_5">
+           <property name="geometry">
+            <rect>
+             <x>400</x>
+             <y>170</y>
+             <width>91</width>
+             <height>41</height>
+            </rect>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">font: 22pt &quot;Noto Sans&quot;;
+color: rgb(255, 255, 255);</string>
+           </property>
+           <property name="text">
+            <string>Hora</string>
+           </property>
+          </widget>
+          <widget class="QTimeEdit" name="te_buscar_hora">
+           <property name="geometry">
+            <rect>
+             <x>500</x>
+             <y>170</y>
+             <width>211</width>
+             <height>41</height>
+            </rect>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(43, 45, 69);
+font: 16pt &quot;Noto Sans&quot;;
+color: rgb(255, 255, 255);</string>
+           </property>
+          </widget>
+          <widget class="QPushButton" name="bt_buscar_reserva">
+           <property name="geometry">
+            <rect>
+             <x>730</x>
+             <y>170</y>
+             <width>211</width>
+             <height>41</height>
+            </rect>
+           </property>
+           <property name="font">
+            <font>
+             <pointsize>20</pointsize>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QPushButton {
+	border-radius: 8px;
+	background-color: rgb(185, 212, 248);
+	color: rgb(255, 255, 255);
+}
+
+QPushButton:hover{
+	
+	background-color: rgb(101, 155, 219);
+}</string>
+           </property>
+           <property name="text">
+            <string>Buscar</string>
+           </property>
+           <property name="autoDefault">
+            <bool>false</bool>
+           </property>
+          </widget>
+          <widget class="QLabel" name="l_info_buscar_reserva">
+           <property name="geometry">
+            <rect>
+             <x>40</x>
+             <y>230</y>
+             <width>481</width>
+             <height>41</height>
+            </rect>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">font: 14pt &quot;Noto Sans&quot;;
+color: rgb(255, 255, 255);</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+          <widget class="QLabel" name="label_6">
+           <property name="geometry">
+            <rect>
+             <x>40</x>
+             <y>310</y>
+             <width>331</width>
+             <height>41</height>
+            </rect>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">font: 26pt &quot;Noto Sans&quot;;
+color: rgb(185, 212, 248);</string>
+           </property>
+           <property name="text">
+            <string>Añadir producto</string>
+           </property>
+          </widget>
           <widget class="QLabel" name="label_7">
            <property name="geometry">
             <rect>
-             <x>290</x>
-             <y>230</y>
-             <width>351</width>
-             <height>161</height>
+             <x>40</x>
+             <y>380</y>
+             <width>91</width>
+             <height>41</height>
             </rect>
            </property>
            <property name="styleSheet">
-            <string notr="true">font: 36pt &quot;Noto Sans&quot;;
+            <string notr="true">font: 22pt &quot;Noto Sans&quot;;
 color: rgb(255, 255, 255);</string>
            </property>
            <property name="text">
-            <string>Pedidos</string>
+            <string>Id</string>
            </property>
           </widget>
+          <widget class="QLineEdit" name="le_anadir_id_reserva">
+           <property name="geometry">
+            <rect>
+             <x>150</x>
+             <y>380</y>
+             <width>241</width>
+             <height>41</height>
+            </rect>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(43, 45, 69);
+font: 16pt &quot;Noto Sans&quot;;
+color: rgb(255, 255, 255);</string>
+           </property>
+           <property name="placeholderText">
+            <string>Id Reserva</string>
+           </property>
+          </widget>
+          <widget class="QLabel" name="label_9">
+           <property name="geometry">
+            <rect>
+             <x>40</x>
+             <y>460</y>
+             <width>131</width>
+             <height>41</height>
+            </rect>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">font: 22pt &quot;Noto Sans&quot;;
+color: rgb(255, 255, 255);</string>
+           </property>
+           <property name="text">
+            <string>Producto</string>
+           </property>
+          </widget>
+          <widget class="QComboBox" name="cb_anadir_producto">
+           <property name="geometry">
+            <rect>
+             <x>180</x>
+             <y>460</y>
+             <width>211</width>
+             <height>41</height>
+            </rect>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(43, 45, 69);
+font: 16pt &quot;Noto Sans&quot;;
+color: rgb(255, 255, 255);</string>
+           </property>
+           <property name="placeholderText">
+            <string>Productos</string>
+           </property>
+          </widget>
+          <widget class="QPushButton" name="br_anadir_producto">
+           <property name="geometry">
+            <rect>
+             <x>100</x>
+             <y>540</y>
+             <width>211</width>
+             <height>41</height>
+            </rect>
+           </property>
+           <property name="font">
+            <font>
+             <pointsize>20</pointsize>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QPushButton {
+	border-radius: 8px;
+	background-color: rgb(185, 212, 248);
+	color: rgb(255, 255, 255);
+}
+
+QPushButton:hover{
+	
+	background-color: rgb(101, 155, 219);
+}</string>
+           </property>
+           <property name="text">
+            <string>Añadir</string>
+           </property>
+           <property name="autoDefault">
+            <bool>false</bool>
+           </property>
+          </widget>
+          <widget class="QSpinBox" name="sb_cant_producto">
+           <property name="geometry">
+            <rect>
+             <x>430</x>
+             <y>460</y>
+             <width>51</width>
+             <height>41</height>
+            </rect>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(43, 45, 69);
+font: 16pt &quot;Noto Sans&quot;;
+color: rgb(255, 255, 255);</string>
+           </property>
+          </widget>
+          <widget class="QLabel" name="label_10">
+           <property name="geometry">
+            <rect>
+             <x>390</x>
+             <y>460</y>
+             <width>41</width>
+             <height>41</height>
+            </rect>
+           </property>
+           <property name="font">
+            <font>
+             <pointsize>15</pointsize>
+            </font>
+           </property>
+           <property name="text">
+            <string>X</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+          <widget class="QLabel" name="label_11">
+           <property name="geometry">
+            <rect>
+             <x>550</x>
+             <y>300</y>
+             <width>441</width>
+             <height>371</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="pixmap">
+            <pixmap>../resources/anadir_producto.png</pixmap>
+           </property>
+           <property name="scaledContents">
+            <bool>true</bool>
+           </property>
+          </widget>
+          <zorder>label_10</zorder>
+          <zorder>label_2</zorder>
+          <zorder>label_3</zorder>
+          <zorder>label_4</zorder>
+          <zorder>le_buscar_nro_mesa</zorder>
+          <zorder>label_5</zorder>
+          <zorder>te_buscar_hora</zorder>
+          <zorder>bt_buscar_reserva</zorder>
+          <zorder>l_info_buscar_reserva</zorder>
+          <zorder>label_6</zorder>
+          <zorder>label_7</zorder>
+          <zorder>le_anadir_id_reserva</zorder>
+          <zorder>label_9</zorder>
+          <zorder>cb_anadir_producto</zorder>
+          <zorder>br_anadir_producto</zorder>
+          <zorder>sb_cant_producto</zorder>
+          <zorder>label_11</zorder>
          </widget>
-         <widget class="QWidget" name="pg_mi_cuenta">
+         <widget class="QWidget" name="pg_facturar">
+          <property name="minimumSize">
+           <size>
+            <width>1280</width>
+            <height>780</height>
+           </size>
+          </property>
           <widget class="QLabel" name="label_8">
            <property name="geometry">
             <rect>
-             <x>340</x>
-             <y>240</y>
-             <width>281</width>
-             <height>151</height>
+             <x>310</x>
+             <y>40</y>
+             <width>351</width>
+             <height>81</height>
             </rect>
            </property>
            <property name="styleSheet">
-            <string notr="true">font: 36pt &quot;Noto Sans&quot;;
-color: rgb(255, 255, 255);</string>
+            <string notr="true">font: 32pt &quot;Noto Sans&quot;;
+color: rgb(185, 212, 248)</string>
            </property>
            <property name="text">
             <string>Facturar</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+          <widget class="QLabel" name="label_12">
+           <property name="geometry">
+            <rect>
+             <x>40</x>
+             <y>150</y>
+             <width>91</width>
+             <height>41</height>
+            </rect>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">font: 22pt &quot;Noto Sans&quot;;
+color: rgb(255, 255, 255);</string>
+           </property>
+           <property name="text">
+            <string>Mesa</string>
+           </property>
+          </widget>
+          <widget class="QLineEdit" name="le_facturar_nro_mesa">
+           <property name="geometry">
+            <rect>
+             <x>150</x>
+             <y>150</y>
+             <width>241</width>
+             <height>41</height>
+            </rect>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(43, 45, 69);
+font: 16pt &quot;Noto Sans&quot;;
+color: rgb(255, 255, 255);</string>
+           </property>
+           <property name="placeholderText">
+            <string>Nro Mesa</string>
+           </property>
+          </widget>
+          <widget class="QTimeEdit" name="te_facturar_hora">
+           <property name="geometry">
+            <rect>
+             <x>520</x>
+             <y>150</y>
+             <width>211</width>
+             <height>41</height>
+            </rect>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(43, 45, 69);
+font: 16pt &quot;Noto Sans&quot;;
+color: rgb(255, 255, 255);</string>
+           </property>
+          </widget>
+          <widget class="QLabel" name="label_13">
+           <property name="geometry">
+            <rect>
+             <x>420</x>
+             <y>150</y>
+             <width>91</width>
+             <height>41</height>
+            </rect>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">font: 22pt &quot;Noto Sans&quot;;
+color: rgb(255, 255, 255);</string>
+           </property>
+           <property name="text">
+            <string>Hora</string>
+           </property>
+          </widget>
+          <widget class="QPushButton" name="bt_facturar_buscar">
+           <property name="geometry">
+            <rect>
+             <x>750</x>
+             <y>150</y>
+             <width>211</width>
+             <height>41</height>
+            </rect>
+           </property>
+           <property name="font">
+            <font>
+             <pointsize>20</pointsize>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QPushButton {
+	border-radius: 8px;
+	background-color: rgb(185, 212, 248);
+	color: rgb(255, 255, 255);
+}
+
+QPushButton:hover{
+	
+	background-color: rgb(101, 155, 219);
+}</string>
+           </property>
+           <property name="text">
+            <string>Buscar</string>
+           </property>
+           <property name="autoDefault">
+            <bool>false</bool>
+           </property>
+          </widget>
+          <widget class="QLabel" name="label_14">
+           <property name="geometry">
+            <rect>
+             <x>310</x>
+             <y>200</y>
+             <width>351</width>
+             <height>81</height>
+            </rect>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">font: 32pt &quot;Noto Sans&quot;;
+color: rgb(185, 212, 248)</string>
+           </property>
+           <property name="text">
+            <string>Items</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+          <widget class="QTableWidget" name="tw_items">
+           <property name="geometry">
+            <rect>
+             <x>50</x>
+             <y>290</y>
+             <width>911</width>
+             <height>331</height>
+            </rect>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(255, 255, 255);
+font: 16pt &quot;Noto Sans&quot;;
+color: rgb(0, 0, 0);</string>
+           </property>
+           <attribute name="horizontalHeaderDefaultSectionSize">
+            <number>454</number>
+           </attribute>
+           <column>
+            <property name="text">
+             <string>Nombre Item </string>
+            </property>
+            <property name="font">
+             <font>
+              <family>Noto Sans</family>
+              <pointsize>14</pointsize>
+              <weight>50</weight>
+              <bold>false</bold>
+             </font>
+            </property>
+            <property name="background">
+             <color>
+              <red>157</red>
+              <green>186</green>
+              <blue>225</blue>
+             </color>
+            </property>
+            <property name="foreground">
+             <brush brushstyle="SolidPattern">
+              <color alpha="255">
+               <red>255</red>
+               <green>255</green>
+               <blue>255</blue>
+              </color>
+             </brush>
+            </property>
+           </column>
+           <column>
+            <property name="text">
+             <string>Precio</string>
+            </property>
+            <property name="font">
+             <font>
+              <family>Noto Sans</family>
+              <pointsize>14</pointsize>
+             </font>
+            </property>
+            <property name="background">
+             <color>
+              <red>157</red>
+              <green>186</green>
+              <blue>225</blue>
+             </color>
+            </property>
+            <property name="foreground">
+             <brush brushstyle="SolidPattern">
+              <color alpha="255">
+               <red>255</red>
+               <green>255</green>
+               <blue>255</blue>
+              </color>
+             </brush>
+            </property>
+           </column>
+          </widget>
+          <widget class="QLabel" name="label_15">
+           <property name="geometry">
+            <rect>
+             <x>50</x>
+             <y>640</y>
+             <width>131</width>
+             <height>41</height>
+            </rect>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">font: 22pt &quot;Noto Sans&quot;;
+color: rgb(255, 255, 255);</string>
+           </property>
+           <property name="text">
+            <string>TOTAL</string>
+           </property>
+          </widget>
+          <widget class="QLabel" name="l_total">
+           <property name="geometry">
+            <rect>
+             <x>190</x>
+             <y>640</y>
+             <width>301</width>
+             <height>41</height>
+            </rect>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(43, 45, 69);
+font: 16pt &quot;Noto Sans&quot;;
+color: rgb(255, 255, 255);
+border-radius: 12px;
+</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+          <widget class="QPushButton" name="bt_facturar_reserva">
+           <property name="geometry">
+            <rect>
+             <x>500</x>
+             <y>640</y>
+             <width>211</width>
+             <height>41</height>
+            </rect>
+           </property>
+           <property name="font">
+            <font>
+             <pointsize>20</pointsize>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QPushButton {
+	border-radius: 8px;
+	background-color: rgb(185, 212, 248);
+	color: rgb(255, 255, 255);
+}
+
+QPushButton:hover{
+	
+	background-color: rgb(101, 155, 219);
+}</string>
+           </property>
+           <property name="text">
+            <string>facturar</string>
+           </property>
+           <property name="autoDefault">
+            <bool>false</bool>
+           </property>
+          </widget>
+          <widget class="QLabel" name="l_info_buscar_reserva_2">
+           <property name="geometry">
+            <rect>
+             <x>730</x>
+             <y>650</y>
+             <width>291</width>
+             <height>51</height>
+            </rect>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">font: 14pt &quot;Noto Sans&quot;;
+color: rgb(255, 255, 255);</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="wordWrap">
+            <bool>true</bool>
            </property>
           </widget>
          </widget>

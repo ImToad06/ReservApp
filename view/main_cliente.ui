@@ -217,7 +217,7 @@ QPushButton:hover{
        <item>
         <widget class="QStackedWidget" name="sw_main">
          <property name="currentIndex">
-          <number>1</number>
+          <number>0</number>
          </property>
          <widget class="QWidget" name="pg_reservar">
           <property name="minimumSize">
@@ -738,6 +738,11 @@ color: rgb(255, 0, 0);</string>
              <width>461</width>
              <height>391</height>
             </rect>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(255, 255, 255);
+font: 16pt &quot;Noto Sans&quot;;
+color: rgb(0, 0, 0);</string>
            </property>
            <property name="sortingEnabled">
             <bool>false</bool>
@@ -1705,6 +1710,11 @@ QPushButton:hover{
              <width>911</width>
              <height>341</height>
             </rect>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">background-color: rgb(255, 255, 255);
+font: 16pt &quot;Noto Sans&quot;;
+color: rgb(0, 0, 0);</string>
            </property>
            <attribute name="horizontalHeaderDefaultSectionSize">
             <number>227</number>

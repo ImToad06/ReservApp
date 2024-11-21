@@ -11,4 +11,5 @@ WITH reserved_tables AS (
 )
 SELECT mes_nro_mesa, mes_capacidad
 FROM mesas
-WHERE mes_id NOT IN (SELECT mes_id FROM reserved_tables);
+WHERE mes_estado = 'a'
+  AND mes_id NOT IN (SELECT mes_id FROM reserved_tables);
